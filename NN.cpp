@@ -8,13 +8,11 @@ double sigmoid(double x) {
     return 1 / (1 + exp(-x));
 }
 
-// Derivative of the sigmoid function
 double sigmoidDerivative(double x) {
     double sigmoidX = sigmoid(x);
     return sigmoidX * (1 - sigmoidX);
 }
 
-// Neural network class
 class NeuralNetwork {
 private:
     std::vector<double> weights;
@@ -50,25 +48,19 @@ public:
 
 int main() {
     NeuralNetwork neuralNetwork(0.1);
-
-    // Training data
-    std::vector<std::vector<double>> trainingData = {
+    vector<std::vector<double>> trainingData = {
         {0, 0, 0},
         {0, 1, 1},
         {1, 0, 1},
         {1, 1, 0}
     };
 
-    // Train the neural network
     for (const auto& data : trainingData) {
         double input1 = data[0];
         double input2 = data[1];
         double target = data[2];
-
         neuralNetwork.train(input1, input2, target);
     }
-
-    // Test the neural network
     double input1, input2;
     cout << "Enter input 1: ";
     cin >> input1;
