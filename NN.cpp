@@ -15,7 +15,7 @@ double sigmoidDerivative(double x) {
 
 class NeuralNetwork {
 private:
-    std::vector<double> weights;
+    vector<double> weights;
     double bias;
     double learningRate;
 
@@ -46,9 +46,9 @@ public:
     }
 };
 
-int main() {
+int32_t main() {
     NeuralNetwork neuralNetwork(0.1);
-    vector<std::vector<double>> trainingData = {
+    vector<vector<double>> trainingData = {
         {0, 0, 0},
         {0, 1, 1},
         {1, 0, 1},
